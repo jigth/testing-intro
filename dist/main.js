@@ -81,30 +81,30 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./app.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/app.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./app.js":
-/*!****************!*\
-  !*** ./app.js ***!
-  \****************/
+/***/ "./src/app.js":
+/*!********************!*\
+  !*** ./src/app.js ***!
+  \********************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const { checkAndGenerateText, createElement } = __webpack_require__(/*! ./util */ \"./util.js\");\n\nconst initApp = () => {\n  // Initializes the app, registers the button click listener\n  const newUserButton = document.querySelector('#btnAddUser');\n  newUserButton.addEventListener('click', addUser);\n};\n\nconst addUser = () => {\n  // Fetches the user input, creates a new HTML element based on it\n  // and appends the element to the DOM\n  const newUserNameInput = document.querySelector('input#name');\n  const newUserAgeInput = document.querySelector('input#age');\n\n  //TODO validate input was here! Make it work again ASAP\n  const outputText = checkAndGenerateText(\n    newUserNameInput.value,\n    newUserAgeInput.value\n  );\n\n  const userList = document.querySelector('.user-list');\n  \n  const element = createElement('li', outputText, 'user-item');\n  userList.appendChild(element);\n};\n\n// Start the app!\ninitApp();\n\n\n//# sourceURL=webpack:///./app.js?");
+eval("const { checkAndGenerateText, createElement } = __webpack_require__(/*! ./util */ \"./src/util.js\");\n\nconst initApp = () => {\n  // Initializes the app, registers the button click listener\n  const newUserButton = document.querySelector('#btnAddUser');\n  newUserButton.addEventListener('click', addUser);\n};\n\nconst addUser = () => {\n  // Fetches the user input, creates a new HTML element based on it\n  // and appends the element to the DOM\n  const newUserNameInput = document.querySelector('input#name');\n  const newUserAgeInput = document.querySelector('input#age');\n\n  //TODO validate input was here! Make it work again ASAP\n  const outputText = checkAndGenerateText(\n    newUserNameInput.value,\n    newUserAgeInput.value\n  );\n\n  const userList = document.querySelector('.user-list');\n  \n  const element = createElement('li', outputText, 'user-item');\n  userList.appendChild(element);\n};\n\n// Start the app!\ninitApp();\n\n\n//# sourceURL=webpack:///./src/app.js?");
 
 /***/ }),
 
-/***/ "./util.js":
-/*!*****************!*\
-  !*** ./util.js ***!
-  \*****************/
+/***/ "./src/util.js":
+/*!*********************!*\
+  !*** ./src/util.js ***!
+  \*********************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("const generateText = (name, age) => {\n\t// Returns output text\n\treturn `${name} (${age} years old)`;\n};\n\nexports.createElement = (type, text, className) => {\n\t// Creates a new HTML element and returns it\n\tconst newElement = document.createElement(type);\n\tnewElement.classList.add(className);\n\tnewElement.textContent = text;\n\treturn newElement;\n};\n\nconst validateInput = (text, notEmpty, isNumber) => {\n\t// Validate user input with two pre-defined rules\n\tif (!text) {\n\t\treturn false;\n\t}\n\tif (notEmpty && text.trim().length === 0) {\n\t\treturn false;\n\t}\n\tif (isNumber && +text === NaN) {\n\t\treturn false;\n\t}\n\treturn true;\n};\n\nexports.checkAndGenerateText = (name, age) => {\n\tif (\n\t\t!validateInput(name, true, false) ||\n\t\t!validateInput(age, false, true)\n\t) {\n\t\treturn false;\n\t}\n\n\tconst outputText = generateText(\n\t\tname,\n\t\tage\n\t);\n\n\treturn outputText;\n}\n\nexports.generateText = generateText;\nexports.validateInput = validateInput;\n\n\n//# sourceURL=webpack:///./util.js?");
+eval("const generateText = (name, age) => {\n\t// Returns output text\n\treturn `${name} (${age} years old)`;\n};\n\nexports.createElement = (type, text, className) => {\n\t// Creates a new HTML element and returns it\n\tconst newElement = document.createElement(type);\n\tnewElement.classList.add(className);\n\tnewElement.textContent = text;\n\treturn newElement;\n};\n\nconst validateInput = (text, notEmpty, isNumber) => {\n\t// Validate user input with two pre-defined rules\n\tif (!text) {\n\t\treturn false;\n\t}\n\tif (notEmpty && text.trim().length === 0) {\n\t\treturn false;\n\t}\n\tif (isNumber && +text === NaN) {\n\t\treturn false;\n\t}\n\treturn true;\n};\n\nexports.checkAndGenerateText = (name, age) => {\n\tif (\n\t\t!validateInput(name, true, false) ||\n\t\t!validateInput(age, false, true)\n\t) {\n\t\treturn false;\n\t}\n\n\tconst outputText = generateText(\n\t\tname,\n\t\tage\n\t);\n\n\treturn outputText;\n}\n\nexports.generateText = generateText;\nexports.validateInput = validateInput;\n\n\n//# sourceURL=webpack:///./src/util.js?");
 
 /***/ })
 

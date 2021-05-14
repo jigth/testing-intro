@@ -1,5 +1,7 @@
-const { createElement, generateText, validateInput, checkAndGenerateText } = require('./util')
+const { createElement, generateText, validateInput, checkAndGenerateText } = require('../src/util')
 const puppeteer = require('puppeteer')
+
+// Example: file:///home/user1/desktop/testing-intro/src/index.html
 const PROJECT_URL = "file:///path/to/this-project's/index.html"
 
 // Unit Tests
