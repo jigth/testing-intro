@@ -1,9 +1,3 @@
-<style>
-    h1 {
-        margin-top: 50px;
-    }
-</style>
-
 # Testing Practice
 
 Testing practice based in the video [JavaScript Testing Introduction Tutorial - Unit Tests, Integration Tests & e2e Tests](https://www.youtube.com/watch?v=r9HdJ8P6GQI)
